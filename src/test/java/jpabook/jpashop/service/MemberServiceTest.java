@@ -44,7 +44,7 @@ public class MemberServiceTest {
 
     }
 
-    @Test(expected =  IllegalStateException.class)
+    @Test(expected = IllegalStateException.class)
     public void 중복_회원_예약() throws Exception {
 
         //given

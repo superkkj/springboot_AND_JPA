@@ -12,16 +12,17 @@ import static javax.persistence.FetchType.LAZY;
 @Setter
 public class Delivery {
 
-    @Id @GeneratedValue
-    @Column(name= "delivery_id")
+    @Id
+    @GeneratedValue
+    @Column(name = "delivery_id")
     private Long id;
 
     @OneToOne(mappedBy = "delivery", fetch = LAZY)
-    private  Order order;
+    private Order order;
 
     @Embedded
     private Address address;
 
     @Enumerated(EnumType.STRING) // 문자로해야 순서에러가 안난다.
-    private  DeliveryStatus deliveryStatus; //Ready , COMP
+    private DeliveryStatus deliveryStatus; //Ready , COMP
 }
